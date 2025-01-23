@@ -6,8 +6,12 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
     result = float("nan")
     if operador == '+':
         result = num1 + num2
-    elif operador == '-':
+    elif operador == '-':   
         result = num1 - num2
+    elif operador == '*':   #multiplicação
+        result = num1 * num2
+    elif operador == '/':  #divisão
+        result = num1 / num2
     elif operador == '%':
         result = num1 % num2
     elif operador == '^':
@@ -18,6 +22,9 @@ def calculadora(num1: float, num2: float, operador: str) -> float:
 def calculadora_v2(num1: float, num2: float, operador: str) -> float:
     operacoes = {
         "+": lambda: num1 + num2,
+        "-": lambda: num1 - num2, #subtração
+        "*": lambda: num1 * num2,#multiplicação
+        "/": lambda: num1 / num2, #divisão
         "%": lambda: num1 % num2,
         "^": lambda: num1 ** num2,
     }
@@ -76,5 +83,6 @@ if __name__ == "__main__":
         except ZeroDivisionError:
             print('Impossivel dividir por zero!-> Tente novamente!')
             time.sleep(2)
+
 
     print('\nVolte sempre!\n')
